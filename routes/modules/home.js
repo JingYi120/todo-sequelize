@@ -6,10 +6,6 @@ const Todo = db.Todo
 const User = db.User
 
 router.get('/', (req, res) => {
-  return Todo.findAll({
-    raw: true,
-    nest: true
-  })
   User.findByPk(req.user.id)
     .then((user) => {
       if (!user) throw new Error('user not found')
